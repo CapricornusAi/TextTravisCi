@@ -12,3 +12,12 @@ before_install:
 
 script:
   - ./gradlew assembleRelease
+
+deploy:
+  provider: releases
+  user: "CapricornusAi"
+  password: "ai0316.."
+  file: app/build/outputs/apk/app-release.apk
+  skip_cleanup: true
+  on:
+    tags: true
