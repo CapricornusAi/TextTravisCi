@@ -14,14 +14,16 @@ android {
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
+
     signingConfigs {
         release {
             storeFile file('../sign/sign.jks')
             storePassword "polyhome"
-            keyAlias "polyhome"
+            keyAlias "ai"
             keyPassword "polyhome"
         }
     }
+
     buildTypes {
         release {
             signingConfig signingConfigs.release
