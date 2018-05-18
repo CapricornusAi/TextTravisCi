@@ -24,7 +24,6 @@ class SplashActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelec
         }
         var name="1"
         var names='2'
-        var name2=' '
 
         val toggle = ActionBarDrawerToggle(
                 this, drawer_layout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close)
