@@ -16,7 +16,7 @@ android {
     }
     signingConfigs {
         release {
-            storeFile file('../sign/release.jks')
+            storeFile file('../sign/sign.jks')
             storePassword "polyhome"
             keyAlias "polyhome"
             keyPassword "polyhome"
