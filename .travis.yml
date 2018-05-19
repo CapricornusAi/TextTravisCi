@@ -17,8 +17,7 @@ deploy:
   provider: releases
 #  user: "CapricornusAi"
 #  password: "ai0316.."
-  api_key:
-    secure: 15a7a251166c02ed0f5043698afaeafb02e9bca6
+  api_key: 15a7a251166c02ed0f5043698afaeafb02e9bca6
   file: app/build/outputs/apk/app-release.apk
   skip_cleanup: true
   on:
