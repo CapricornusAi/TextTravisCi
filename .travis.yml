@@ -13,17 +13,16 @@ script:
 notifications:
   webhooks: https://hook.bearychat.com/=bwA9F/travis/845f7e0798a8a3c7eec6553d05276ffd
 
-before_install:
-- gem install fir-cli
-after_deploy:
-- fir p app/build/outputs/apk/app-release.apk -T $FIR_TOKEN -c "`git cat-file tag $TRAVIS_TAG`"
-
 deploy:
   provider: releases
   api_key:
     secure: c62Pf5U2fgUfzSp0p2cAAvJTT66k0OEXf9Xm2CrzzPkZWCsPWWWgZXLGOPj+vGfFdSiJENFzUw1GJZ0rMWGelWibOR4IHZORUwWw+NJ2OgleZ0Dj4/jrCEyLz0Y96MLW7IsbR2GrKPwYawHf1iWdLrLKoN5aYQfj4UulgKJKY7XlPle5fRPEe5bjW9AAEWSyEDFxGNfdbsYLLg0m4/sNE/PLjiriCizr9dkZn7ZwS5Zw8sVuhU8C4Dv7tTzqdwu9Z0nFP+RJn7a/n9ExBvF2AD9KbHNftPwmDdBeVZ8Uu//ZsXgxz4wTBw/xSfqIgL+7V1eyGH7EsJhEIeQCdij6NoCAwYpatpXHmRPWjWayIsufAzrmSK0QHeLVkZpxnCu5gNRYr4/nV7bmLvvREzxzfVnihkhvLAYX690j60cYp9DkgCjx77Mp2y5cPmTnSS5cOZELTNjO1TvQDcIlzxJY6gedqujBW7/nJJoWDZFvE0uj1dS2JNSMTeXDWNIWwfl4y303DcMx5HFBX+BCRcEBlMUOEmHnu6woQSQf+01PvYtDxcp2zFUn6+1wnUuIolGj98qrJtDJnJuvqKwJFqkPJSdlD+jvFbBhhzDgGafakSbP7wPANTpRPBRibzqxiUUJXuZEHIHa2lpdmXjx4NzqqjexL5AbrGMxDwDSGAWokUg=
-  file: app/build/outputs/apk/app-release.apk
+  file: app/build/outputs/apk/release/app-release.apk
   skip_cleanup: true
   on:
     tags: true
 
+before_install:
+- gem install fir-cli
+after_deploy:
+- fir p app/build/outputs/apk/release/app-release.apk -T $FIR_TOKEN -c "`git cat-file tag $TRAVIS_TAG`"
