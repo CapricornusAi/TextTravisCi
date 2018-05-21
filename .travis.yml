@@ -13,14 +13,14 @@ before_install:
 script:
   - ./gradlew assembleRelease
 
-deploy:
-  provider: releases
-  user: "CapricornusAi"
-  password: "ai0316.."
-  file: app/build/outputs/apk/app-release.apk
-  skip_cleanup: true
-  on:
-    tags: true
+#deploy:
+#  provider: releases
+#  user: "CapricornusAi"
+#  password: "ai0316.."
+#  file: app/build/outputs/apk/app-release.apk
+#  skip_cleanup: true
+#  on:
+#    tags: true
 
 notifications:
   webhooks: https://hook.bearychat.com/=bwA9F/travis/845f7e0798a8a3c7eec6553d05276ffd
